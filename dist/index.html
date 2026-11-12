@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="以六篇官方文件與研究論文建立的 AI 幻覺 LLM Wiki、教學 HTML 簡報與 loop graph。">
+  <title>AI 幻覺查證室｜LLM Wiki × 教學簡報</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">✓</span><span>AI 幻覺查證室</span></a>
+    <nav class="nav" aria-label="主要導覽">
+      <a href="index.html" aria-current="page">總覽</a><a href="wiki.html">LLM Wiki</a><a href="slides.html">教學簡報</a><a href="process.html">Loop / Graph</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">LLM Wiki → Verified teaching deck</p>
+          <h1>流暢，<em>不等於正確。</em></h1>
+          <p class="hero-copy">從 6 篇官方文件與研究論文出發，把「AI 幻覺」拆成能理解、能查證、能修訂的教學知識。每一張投影片，都能回到 Wiki 的來源節點。</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="slides.html">開始 10 分鐘教學 →</a><a class="btn btn-ghost" href="wiki.html">先看 Wiki 來源</a></div>
+        </div>
+        <aside class="hero-card" aria-label="專案摘要">
+          <p class="eyebrow" style="color:var(--coral)">Ingest snapshot</p>
+          <div class="metric"><strong>6</strong><span>篇正式來源</span></div>
+          <div class="metric"><strong>24</strong><span>條原子主張</span></div>
+          <div class="metric"><strong>10</strong><span>張教學投影片</span></div>
+          <div class="metric"><strong>2</strong><span>輪檢查與修訂</span></div>
+        </aside>
+      </div>
+    </section>
+    <section class="section">
+      <div class="shell">
+        <div class="section-head"><p class="eyebrow">Three deliverables</p><div><h2>不是一份簡報，而是一條可追蹤的知識鏈。</h2><p>Wiki 保存證據，簡報負責教學，流程頁說明資料如何被取得、整理、檢查與重新生成。</p></div></div>
+        <div class="card-grid">
+          <article class="feature-card"><span class="card-index">01</span><h3>LLM Wiki</h3><p>6 篇來源都有核心主張、限制、標籤與投影片對應；可搜尋與篩選。</p><a href="wiki.html">進入知識庫</a></article>
+          <article class="feature-card"><span class="card-index">02</span><h3>教學 HTML 簡報</h3><p>從定義走到查證策略，支援左右鍵、手機、進度列與列印。</p><a href="slides.html">開啟簡報</a></article>
+          <article class="feature-card"><span class="card-index">03</span><h3>Loop / Graph</h3><p>標出三個回圈、檢查條件、實際失敗紀錄與檢查提前的原因。</p><a href="process.html">查看流程</a></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-dark">
+      <div class="shell">
+        <div class="section-head"><p class="eyebrow">Quality gates</p><div><h2>先攔截誇大，再生成畫面。</h2><p>第一次執行把 RAG 寫成「消除幻覺」。檢查發現來源只支持「改善事實性與來源追溯」，於是把限制檢查提前到 Wiki ingest 階段。</p></div></div>
+        <div class="status-strip">
+          <div class="status-item"><strong>來源閘門</strong><span>官方或原始研究</span></div>
+          <div class="status-item"><strong>主張閘門</strong><span>範圍＋限制齊全</span></div>
+          <div class="status-item"><strong>引用閘門</strong><span>每張投影片有來源 ID</span></div>
+          <div class="status-item"><strong>介面閘門</strong><span>鍵盤、連結、手機可用</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell footer-grid"><span>AI 幻覺查證室 · 2026-11-13</span><span><a href="wiki.html">6 篇 Wiki</a> · <a href="process.html">執行紀錄</a></span></div></footer>
+</body>
+</html>

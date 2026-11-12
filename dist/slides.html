@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="給初學者的 AI 幻覺辨識與查證教學簡報。">
+  <title>教學簡報｜AI 幻覺：從相信到查證</title>
+  <link rel="stylesheet" href="styles.css"><link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body class="deck-body">
+  <a class="skip" href="#deck">跳到簡報</a>
+  <header class="deck-topbar"><a href="index.html">← 回到專案</a><span id="slideTitle">AI 幻覺：從相信到查證</span><a href="wiki.html">查看 Wiki</a></header>
+  <main class="deck-stage" id="deck" aria-live="polite">
+    <section class="slide active" data-title="封面" data-source="S1 S2">
+      <div class="slide-inner"><p class="slide-kicker">Teaching deck · 10 minutes</p><h1>AI 幻覺：<br><span style="color:var(--lime)">從相信到查證</span></h1><p class="slide-lead">給第一次接觸這個主題的人：理解為什麼 AI 會「很像真的」，並學會一套可以實際操作的查證流程。</p><p class="source-foot">知識來源：S1 NIST · S2 OpenAI</p></div>
+    </section>
+    <section class="slide" data-title="什麼是 AI 幻覺？" data-source="S1 S2">
+      <div class="slide-inner"><p class="slide-kicker">01 · Definition</p><h2>它不是「看見不存在的東西」，而是產生了<mark style="background:var(--lime)">合理但錯誤</mark>的內容。</h2><div class="slide-grid"><div class="slide-card"><h3>常見表現</h3><ul><li>虛構不存在的論文或網址</li><li>把人物、日期、數字混在一起</li><li>前後矛盾，卻維持自信語氣</li></ul></div><div class="slide-card coral"><h3>先記住</h3><p>流暢度、完整度、專業語氣，都不是證據。</p></div></div><p class="source-foot">S1：confabulation 定義與風險 · S2：plausible but false statements</p></div>
+    </section>
+    <section class="slide" data-title="為什麼會發生？" data-source="S1 S2">
+      <div class="slide-inner"><p class="slide-kicker">02 · Mechanism</p><h2>模型擅長預測「下一個像什麼」，不等於知道「這件事是真是假」。</h2><div class="slide-grid"><div class="slide-card lime"><h3>訓練層</h3><p>模型從大量文字學模式；罕見、任意的事實不容易只靠統計可靠推出。</p></div><div class="slide-card"><h3>評估層</h3><p>只看答對率時，猜測可能偶爾得分；承認「不知道」卻一定拿不到正確答案分數。</p></div></div><p class="source-foot">S1：統計生成設計 · S2：next-word prediction 與 guessing incentive</p></div>
+    </section>
+    <section class="slide" data-title="風險不只一種" data-source="S1">
+      <div class="slide-inner"><p class="slide-kicker">03 · Risk</p><h2>同一個錯誤，在不同情境有不同後果。</h2><div class="steps"><article class="step"><h3>低風險</h3><p>腦力激盪、故事草稿：可容許虛構，但要標示。</p></article><article class="step"><h3>資訊風險</h3><p>報告、新聞、歷史：錯誤會被轉傳。</p></article><article class="step"><h3>決策風險</h3><p>醫療、法律、財務：錯誤可能直接影響行動。</p></article><article class="step"><h3>信任風險</h3><p>虛構引文與假推理，讓人以為內容已被證明。</p></article></div><p class="source-foot">S1 NIST：confabulation 在重要決策與虛構引用中的風險</p></div>
+    </section>
+    <section class="slide" data-title="把長文拆成可查證單位" data-source="S5">
+      <div class="slide-inner"><p class="slide-kicker">04 · Atomic facts</p><h2>不要問「整段像不像真的」，要問「每個主張有沒有證據」。</h2><div class="claim-demo"><div class="claim"><span class="claim-status supported">支持</span><span>FActScore 把長文拆成原子事實。</span><small>S5</small></div><div class="claim"><span class="claim-status unknown">不足</span><span>這個方法適用所有語言與所有任務。</span><small>需更多證據</small></div><div class="claim"><span class="claim-status refuted">反駁</span><span>找不到來源就一定代表內容錯誤。</span><small>S5 限制</small></div></div><p class="source-foot">S5 FActScore：以可靠知識來源逐一檢查原子事實</p></div>
+    </section>
+    <section class="slide" data-title="方法一：RAG" data-source="S3 S1">
+      <div class="slide-inner"><p class="slide-kicker">05 · Retrieve</p><h2>讓模型「先查資料再回答」，但別把檢索當成保證。</h2><div class="slide-grid"><div class="slide-card lime"><h3>RAG 帶來什麼？</h3><ul><li>連接可更新的外部知識</li><li>提供來源追溯的可能</li><li>改善知識密集任務的事實性</li></ul></div><div class="slide-card coral"><h3>仍會錯在哪？</h3><ul><li>找錯文件</li><li>來源本身過時或不可靠</li><li>回答沒有忠實使用檢索內容</li></ul></div></div><p class="source-foot">S3 RAG 原論文 · S1 NIST 風險框架</p></div>
+    </section>
+    <section class="slide" data-title="方法二：SelfCheck" data-source="S4">
+      <div class="slide-inner"><p class="slide-kicker">06 · Resample</p><h2>同一題問多次，答案越分歧，越值得提高警覺。</h2><div class="slide-grid"><div class="slide-card"><h3>SelfCheckGPT 的直覺</h3><p>模型若掌握某個概念，多次抽樣通常較一致；幻覺句子比較容易彼此矛盾。</p></div><div class="slide-card coral"><h3>重要限制</h3><p>一致 ≠ 正確。模型也可能每次都重複同一個錯誤，所以仍需要外部證據。</p></div></div><p class="source-foot">S4 SelfCheckGPT：黑箱、零外部資源的抽樣式風險檢測</p></div>
+    </section>
+    <section class="slide" data-title="方法三：CoVe" data-source="S6">
+      <div class="slide-inner"><p class="slide-kicker">07 · Verify independently</p><h2>Chain-of-Verification：把「回答」與「查證」分開。</h2><div class="steps"><article class="step"><h3>初稿</h3><p>先產生可檢查的答案。</p></article><article class="step"><h3>提問</h3><p>為關鍵主張設計查證問題。</p></article><article class="step"><h3>獨立查證</h3><p>不要讓原答案直接錨定查證。</p></article><article class="step"><h3>修訂</h3><p>依查證結果重寫最終答案。</p></article></div><p class="source-foot">S6 Chain-of-Verification：四步驗證鏈與實驗結果</p></div>
+    </section>
+    <section class="slide" data-title="實作：查一則虛構引用" data-source="S5 S6">
+      <div class="slide-inner"><p class="slide-kicker">08 · Practice</p><h2>看到一篇「看起來很真的論文」時，怎麼做？</h2><div class="slide-grid"><div class="slide-card"><h3>AI 回答</h3><p>「2021 年 Lee 等人在《Journal of AI Learning》證明……」</p><p><b>先拆成：</b>作者、年份、期刊、研究結論四個原子主張。</p></div><div class="slide-card lime"><h3>查證順序</h3><ol><li>找 DOI 或正式資料庫紀錄</li><li>核對作者、標題、年份</li><li>讀摘要是否真的支持結論</li><li>找不到就標記「證據不足」</li></ol></div></div><p class="source-foot">S5 原子事實 · S6 獨立查證與修訂</p></div>
+    </section>
+    <section class="slide" data-title="帶走一個 STOP 流程" data-source="S1 S2 S6">
+      <div class="slide-inner"><p class="slide-kicker">09 · Takeaway</p><h2>看到重要 AI 回答，先 <span style="color:var(--lime)">STOP</span>。</h2><div class="steps"><article class="step"><h3>Scope</h3><p>這是創作，還是需要事實正確的任務？</p></article><article class="step"><h3>Trace</h3><p>來源能否打開？是否真的支持主張？</p></article><article class="step"><h3>Observe</h3><p>拆成原子事實，找矛盾與證據不足。</p></article><article class="step"><h3>Pause</h3><p>高風險或不確定時，暫停採用並找人覆核。</p></article></div><p class="source-foot">綜合 S1 風險 · S2 不確定性 · S6 驗證流程</p></div>
+    </section>
+  </main>
+  <footer class="deck-controls" aria-label="簡報控制"><button class="deck-btn" id="prev" aria-label="上一張">←</button><div><div class="progress-track"><div class="progress-bar" id="progress"></div></div><div class="slide-count" id="count">1 / 10</div></div><button class="deck-btn" id="next" aria-label="下一張">→</button></footer>
+  <script src="slides.js"></script>
+</body>
+</html>

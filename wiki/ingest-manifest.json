@@ -1,0 +1,72 @@
+{
+  "topic": "生成式 AI 幻覺：如何辨識、查證與降低錯誤",
+  "ingested_at": "2026-11-13",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+      "publisher": "NIST",
+      "year": 2024,
+      "type": "official",
+      "url": "https://doi.org/10.6028/NIST.AI.600-1",
+      "tags": ["definition", "risk", "governance"],
+      "status": "ingested",
+      "slides": [2, 4, 10]
+    },
+    {
+      "id": "S2",
+      "title": "Why language models hallucinate",
+      "publisher": "OpenAI",
+      "year": 2025,
+      "type": "official-research",
+      "url": "https://openai.com/index/why-language-models-hallucinate/",
+      "tags": ["definition", "cause", "uncertainty"],
+      "status": "ingested",
+      "slides": [2, 3, 10]
+    },
+    {
+      "id": "S3",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "publisher": "NeurIPS",
+      "year": 2020,
+      "type": "research",
+      "url": "https://proceedings.neurips.cc/paper/2020/hash/6b493230-Abstract.html",
+      "tags": ["retrieval", "provenance", "mitigation"],
+      "status": "ingested",
+      "slides": [6]
+    },
+    {
+      "id": "S4",
+      "title": "SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection",
+      "publisher": "ACL Anthology / EMNLP",
+      "year": 2023,
+      "type": "research",
+      "url": "https://aclanthology.org/2023.emnlp-main.557/",
+      "tags": ["detection", "sampling", "consistency"],
+      "status": "ingested",
+      "slides": [7]
+    },
+    {
+      "id": "S5",
+      "title": "FActScore: Fine-grained Atomic Evaluation of Factual Precision",
+      "publisher": "ACL Anthology / EMNLP",
+      "year": 2023,
+      "type": "research",
+      "url": "https://aclanthology.org/2023.emnlp-main.741/",
+      "tags": ["evaluation", "atomic-facts", "evidence"],
+      "status": "ingested",
+      "slides": [5, 9]
+    },
+    {
+      "id": "S6",
+      "title": "Chain-of-Verification Reduces Hallucination in Large Language Models",
+      "publisher": "ACL Anthology / Findings of ACL",
+      "year": 2024,
+      "type": "research",
+      "url": "https://aclanthology.org/2024.findings-acl.212/",
+      "tags": ["verification", "revision", "mitigation"],
+      "status": "ingested",
+      "slides": [8, 9, 10]
+    }
+  ]
+}

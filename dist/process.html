@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Loop / Graph｜AI 幻覺查證室</title>
+  <link rel="stylesheet" href="styles.css"><link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">✓</span><span>AI 幻覺查證室</span></a><nav class="nav" aria-label="主要導覽"><a href="index.html">總覽</a><a href="wiki.html">LLM Wiki</a><a href="slides.html">教學簡報</a><a href="process.html" aria-current="page">Loop / Graph</a></nav></header>
+  <main id="main">
+    <section class="page-hero"><div class="shell"><p class="eyebrow" style="color:var(--coral)">Workflow transparency</p><h1>資訊怎麼走？錯誤在哪裡被攔下？</h1><p>這個 graph 不是單向生產線。來源、主張、引用與介面各有品質閘門；失敗會回到最近能修正根因的節點。</p></div></section>
+    <section class="section section-dark">
+      <div class="shell">
+        <div class="graph-wrap" aria-label="LLM Wiki 到 HTML 簡報流程圖">
+          <div class="graph">
+            <article class="node" data-node="discuss"><b>N1 · 討論</b><p>比較候選主題、受眾與學習目標。</p></article><div class="arrow" aria-hidden="true">→</div>
+            <article class="node" data-node="acquire"><b>N2 · 取得</b><p>搜尋官方文件與原始研究。</p></article><div class="arrow" aria-hidden="true">→</div>
+            <article class="node check" data-node="source-gate"><b>G1 · 來源閘門</b><p>可信度、年份、可追溯性。</p></article><div class="arrow" aria-hidden="true">→</div>
+            <article class="node" data-node="ingest"><b>N3 · Ingest</b><p>主張、限制、標籤、用途。</p></article>
+          </div>
+          <div class="graph" style="margin-top:12px">
+            <article class="node check" data-node="claim-gate"><b>G2 · 主張閘門</b><p>證據是否真的支持？</p></article><div class="arrow" aria-hidden="true">→</div>
+            <article class="node" data-node="query"><b>N4 · 查詢 Wiki</b><p>依學習目標取回相關節點。</p></article><div class="arrow" aria-hidden="true">→</div>
+            <article class="node" data-node="draft"><b>N5 · 大綱／草稿</b><p>建立概念順序與例子。</p></article><div class="arrow" aria-hidden="true">→</div>
+            <article class="node check" data-node="citation-gate"><b>G3 · 引用閘門</b><p>每張投影片對應來源 ID。</p></article>
+          </div>
+          <div class="graph" style="margin-top:12px;grid-template-columns:repeat(5,1fr)">
+            <article class="node" data-node="html"><b>N6 · HTML</b><p>版面、鍵盤、進度與連結。</p></article><div class="arrow" aria-hidden="true">→</div>
+            <article class="node check" data-node="ui-gate"><b>G4 · 介面閘門</b><p>桌機、手機、可讀性、連結。</p></article><div class="arrow" aria-hidden="true">→</div>
+            <article class="node output" data-node="publish"><b>N7 · 發布／反思</b><p>保存結果、失敗與流程修改。</p></article>
+          </div>
+        </div>
+        <div class="loop-row">
+          <article class="loop-card"><strong>Loop A｜來源不合格</strong><p>G1 失敗 → 回 N2 改用官方或原始研究。</p></article>
+          <article class="loop-card"><strong>Loop B｜主張超出證據</strong><p>G2/G3 失敗 → 回 N3 補限制或回 N4 重查。</p></article>
+          <article class="loop-card"><strong>Loop C｜教學介面失敗</strong><p>G4 失敗 → 回 N6 調整內容密度與互動。</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="shell">
+        <div class="section-head"><p class="eyebrow">Run log</p><div><h2>一次實際執行：先失敗，再把檢查往前移。</h2><p>檢查紀錄不是裝飾，它改變了 graph 的結構。</p></div></div>
+        <div class="log-grid">
+          <article class="log-card fail"><h3>Run 01 · 失敗</h3><ul><li>ingest 6 篇資料、整理 24 條原子主張。</li><li>第一次大綱把 RAG 寫成「利用外部資料即可消除幻覺」。</li><li>來源對應檢查發現：S3 只支持改善事實性與來源追溯。</li><li>結果：1 項主張超出證據，停止產生 HTML。</li></ul></article>
+          <article class="log-card pass"><h3>Run 02 · 通過</h3><ul><li>把「限制」變成每篇 Wiki 必填欄位。</li><li>在大綱前先檢查來源 ID、範圍與限制。</li><li>改寫 RAG 敘述，並補上檢索錯誤與來源品質風險。</li><li>`npm run check`：來源 6、投影片 10、引用與連結全部通過。</li></ul></article>
+        </div>
+        <article class="reflection"><p class="eyebrow">Reflection</p><h2>最常出錯：整理重點 → 教學大綱</h2><p><strong>問題：</strong>摘要會把「降低」壓縮成「消除」，讓好記的口號超出研究證據。</p><p><strong>提前檢查：</strong>從 HTML 完成後，移到 Wiki ingest 完成、進入大綱之前。</p><p><strong>為什麼修改 graph：</strong>越早攔截，越少錯誤被複製到多張投影片；來源限制也能成為教學內容，而不是最後才補的免責聲明。</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell footer-grid"><span>Graph 含 7 個節點、4 個閘門、3 個回圈</span><a href="wiki.html">回到 Wiki 證據</a></div></footer>
+</body>
+</html>

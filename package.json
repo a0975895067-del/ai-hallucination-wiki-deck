@@ -1,0 +1,10 @@
+{
+  "name": "llm-wiki-hallucination-deck",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/validate.mjs",
+    "serve": "npx --yes http-server dist -p 4321 -c-1"
+  }
+}
