@@ -2,6 +2,14 @@
 
 這是一份獨立的新作業專案，以「生成式 AI 幻覺：如何辨識、查證與降低錯誤」為主題。專案先將 6 篇官方文件與研究論文 ingest 成可追蹤的 LLM Wiki，再從 Wiki 的原子主張、限制與來源對應產生教學型 HTML 簡報。
 
+## 線上成果
+
+- [成果首頁](https://ai-hallucination-wiki-deck-2026.yu-cheng-gao-0906.chatgpt.site/)
+- [LLM Wiki](https://ai-hallucination-wiki-deck-2026.yu-cheng-gao-0906.chatgpt.site/wiki.html)
+- [教學 HTML 簡報](https://ai-hallucination-wiki-deck-2026.yu-cheng-gao-0906.chatgpt.site/slides.html)
+- [Loop / Graph 與檢查紀錄](https://ai-hallucination-wiki-deck-2026.yu-cheng-gao-0906.chatgpt.site/process.html)
+- [可直接繳交的內容](SUBMISSION.md)
+
 ## 成果結構
 
 - `wiki/`：主題決策、6 篇來源筆記、概念頁與實際執行紀錄。
